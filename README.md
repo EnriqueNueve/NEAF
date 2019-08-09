@@ -120,7 +120,7 @@ are the first passed parameter for "train" and "test" functions and, the y-value
 ```
 
 <p align="center">
-  <img src="GraphImage.png" alt="Forecast Graph">
+  <img src="Images/GraphImage.png" alt="Forecast Graph">
 </p>
 
 
