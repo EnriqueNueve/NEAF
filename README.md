@@ -18,7 +18,7 @@ Python3: numpy, pandas, sklearn, matplotlib, seaborn
 The network is tested with the Iris data set. The training samples and test samples, X, need to be a numpy array with the shape of (sample, features). The labels of the training samples and test samples, Y, need the class labels to be assigned to natural numbers (1, 2, 3, 4, .....) and also be in the form of a numpy array. The values of X need to be scaled to the interval of (0,1).
 
 ```
-    #Begin: Import data
+# BEGIN: Import data
     ticker_symbol = 'ABT' #Select asset ticker symbol
     data = pd.read_excel(ticker_symbol+'.xlsx')
     date = data['date'].tolist()
@@ -52,15 +52,14 @@ The network is tested with the Iris data set. The training samples and test samp
     for i in range(0,2000,sample_size):
         sample = X_test[i:i+sample_size].T
         test_data_list.append(sample)
-    #End: Import data
-
+# END: Import data
 ```
 
 ### Declare network
 To use the network, .
 
 ```
-#Begin: Network Architecture
+# BEGIN: Network Architecture
     nodes = 200  # number of nodes = (number of samples)/(sample size)
     Reset_Gate_Layers = [(num_input_var,68,'swish'),(68,'BatchNorm'),(68,num_input_var,'sigmoid')]
     Update_Gate_Layers = [(num_input_var,68,'swish'),(68,'BatchNorm'),(68,num_input_var,'sigmoid')]
@@ -68,10 +67,10 @@ To use the network, .
     Attention_Gate_Layer = [(sample_size,sample_size,'softmax'),(sample_size,num_input_var,'tanh')]
     Stepdown_Network_Layers = [(6,'BatchNorm'),(6, 1, "sigmoid")]
     Architecture = [Reset_Gate_Layers,Update_Gate_Layers,Output_Gate_Layers,Attention_Gate_Layer,Stepdown_Network_Layers]
-    # END: Network Architecture
+# END: Network Architecture
 
 
-    # BEGIN: Declare and run RAU
+# BEGIN: Declare and run RAU
     lr = 0.001        # Learning rate
     key_LF = "Huber"     # Cost function
     key_Opt = "Adam"  # Optimization technique
@@ -81,7 +80,7 @@ To use the network, .
     for i in range(epochs):
         print("Epoch: ", i)
         network.train(input_data_list,target_data_list)
-    # END: Declare and run RAU
+# END: Declare and run RAU
 ```
 
 ### Denormalize data and print graph of results
@@ -90,7 +89,7 @@ are the first passed parameter for "train" and "test" functions and, the y-value
 "train" and "test" functions. 
 
 ```
-    # BEGIN: Predict and plot
+# BEGIN: Predict and plot
     def denormalize(actual,norm_data):
         actual = actual.reshape(-1,1)
         norm_data = norm_data.reshape(-1,1)
@@ -117,7 +116,7 @@ are the first passed parameter for "train" and "test" functions and, the y-value
 
     plt.savefig("forcast_graph.png")
     plt.show()
-    # END: Predict and plot
+# END: Predict and plot
 ```
 
 <p align="center">
