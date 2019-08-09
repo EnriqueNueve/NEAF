@@ -55,8 +55,6 @@ are the first passed parameter for "train" and "test" functions and, the y-value
 
 The program finishes by printing out a graph of the networks fit to training data and forecast on test data.
 
-![Graph](https://github.com/RealestRick-C137/NEAF/master/GraphImage.png)
-![Alt text](relative/path/to/NEAF/GraphImage.png?raw=true "Title")
 ![Screenshot](GraphImage.png)
 
 
