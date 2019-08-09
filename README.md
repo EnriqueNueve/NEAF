@@ -15,7 +15,8 @@ Python3: numpy, pandas, sklearn, matplotlib, seaborn
 
 ### Import data, scale, and split into windows
 
-The network is tested with the Iris data set. The training samples and test samples, X, need to be a numpy array with the shape of (sample, features). The labels of the training samples and test samples, Y, need the class labels to be assigned to natural numbers (1, 2, 3, 4, .....) and also be in the form of a numpy array. The values of X need to be scaled to the interval of (0,1).
+To begin, the program reads an excel file for historical stock data for the asset "ABT". This data was collected through the 
+Alpha Vantage API. Then, the number of days desired for training and forecasting are selected. Following that, the data is scalled on the range (.05,.95) and splitinto windows of ten days. This is because the network will be performing a ten day forecast. In total, three data sets are split into windows: training data, target data, and forecast input data.
 
 ```
 # BEGIN: Import data
@@ -56,7 +57,9 @@ The network is tested with the Iris data set. The training samples and test samp
 ```
 
 ### Declare network
-To use the network, .
+To use the network, several variables need to be declared. The number of nodes for the network needs to be declared. The number of nodes is determined by the following formula: number of nodes = (number of samples)/(sample size). The the architrecure of the network needs to be declared. This involed declaring a Reset Gate, Update Gate, Ouput Gate, Attention Gate, and Stepdown Network. The dimensionality of the Gates input and output need to be the sam dimension of the number of 
+input variables. Each Gate and the Stepdown Network needs a tuple passed in a list declaring the size of the input dimension, output dimension, and the layers activation function. 
+Upon declaring the Network Architecture, the DeepRAU's parameters need to be declared. This includes at minimum the learnint rate, loss function, and optimization function. Finaly, the number of epochs are declared and the network is trained in a for loop for said declared epochs.
 
 ```
 # BEGIN: Network Architecture
@@ -84,9 +87,7 @@ To use the network, .
 ```
 
 ### Denormalize data and print graph of results
-The X inputs and Y labels need to be separated into two separate date sets, a training and test set. The X-values
-are the first passed parameter for "train" and "test" functions and, the y-values are the second parameter passed for the 
-"train" and "test" functions. 
+The program denormalizes the training data taught back to the orginal scaled values. The program then performs a forecast on the test data and is also denormalized to the intial scale. Finally, the program prints out a graph showing the networks performance on learning the training data and predicting the test data.
 
 ```
 # BEGIN: Predict and plot
@@ -122,10 +123,6 @@ are the first passed parameter for "train" and "test" functions and, the y-value
 <p align="center">
   <img src="Images/GraphImage.png" alt="Forecast Graph">
 </p>
-
-
-
-
 
 
 ## Authors
