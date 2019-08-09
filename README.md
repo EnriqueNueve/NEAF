@@ -55,7 +55,12 @@ are the first passed parameter for "train" and "test" functions and, the y-value
 
 The program finishes by printing out a graph of the networks fit to training data and forecast on test data.
 
-![Screenshot](GraphImage.png)
+<p align="center">
+  <img src="GraphImage.png" alt="Forecast Graph">
+</p>
+
+
+
 
 
 
