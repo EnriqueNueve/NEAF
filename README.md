@@ -54,10 +54,10 @@ are the first passed parameter for "train" and "test" functions and, the y-value
 ```
 
 The program finishes by printing out a graph of the networks fit to training data and forecast on test data.
-```
+
 ![Image of forecast graph]
 (GraphImage.png)
-```
+
 
 
 ## Authors
