@@ -57,6 +57,7 @@ The program finishes by printing out a graph of the networks fit to training dat
 
 ![Graph](https://github.com/RealestRick-C137/NEAF/master/GraphImage.png)
 ![Alt text](relative/path/to/NEAF/GraphImage.png?raw=true "Title")
+![Screenshot](GraphImage.png)
 
 
 
