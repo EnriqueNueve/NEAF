@@ -53,9 +53,10 @@ are the first passed parameter for "train" and "test" functions and, the y-value
     nn.test(X_test,y_test)
 ```
 
-The test function will print out the accuracy of the model for for the passed test set.
+The program finishes by printing out a graph of the networks fit to training data and forecast on test data.
 ```
-Accuracy: 98.0% 
+![Image of forecast graph]
+(GraphImage.png)
 ```
 
 
