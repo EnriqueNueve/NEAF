@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Enrique Nueve Blog</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<section id="header">
+		<header>
+			<span class="image avatar"><img src="images/me_pic.jpg" alt="" /></span>
+			<h1 id="logo"><a href="index.html">Enrique Nueve</a></h1>
+			<p>Undergraduate Statistics Major and Machine Learning Researcher.<br />
+				Aspring Quantitative Analyst.</p>
+		</header>
+		<nav id="nav">
+			<ul>
+				<li><a href="index.html" class="active">Home</a></li>
+
+			</ul>
+		</nav>
+		<footer>
+			<ul class="icons">
+				<li><a href="https://github.com/RealestRick-C137" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<li><a href="https://www.linkedin.com/in/enrique-nueve-7a050115b/" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+			</ul>
+		</footer>
+	</section>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- One -->
+			<section id="one">
+				<div class="image main" data-position="center">
+					<img src="images/chicago_banner.jpg" alt="" />
+				</div>
+				<div class="container">
+					<header class="major">
+						<h2> IN PROGRESS </h2>
+						<h2>Creating a Recurrent Attention Unit from scratch</h2>
+						<p> August 2019 </p>
+					</header>
+
+
+					<h2> This post first talks about the experiance of my first academic
+						research project. If you are solely intersted in the technical details
+						of the project, <a href="#jump1"> <u>click here</u> </a>. </h2>
+
+					<br></br>
+					<h5> Intro </h5>
+					<p> &emsp; This project was my first full-scale Machine Learning model implementation.
+							I collected the data, cleaned the data, built the model from scratch, ran the test,
+							and wrote an academic paper. Before this project, I had almost no experience with
+							Deep Learning models besides working with an MLP on a generic data set such as MNIST
+							or Iris. I've never had formal teaching in machine learning, even today I've never
+							taken a class. Even so, I was ambitious and wanted to become fluent in Deep Learning.
+              This was my junior year in college and I had just transferred from Community College
+							and wanted to immerse myself in the new environment. I thought upon transferring
+							from Community College, I would then be able to take classes on Machine Learning
+							and work with professors who were experienced in Machine Learning. With that in mind,
+							I signed up for a research program for transfer students who had no research experience.
+              To my surprise, it was left up to the students to find a professor to work with.
+							Even more to more surprise, the three professors at the university who work in Machine
+							Learning were all on sabbatical. I knew I wanted to get into Machine Learning and decided
+							just to teach myself. How hard could it be?
+					</p>
+					<p></p>
+					<h5> 1. Choosing a Topic </h5>
+					<p> &emsp; I was now enrolled in this research program with no guidance. I did find a professor
+						to work under yet, his focus was in Data Mining, and had no experience in Deep Learning.
+						Although he provided much insight into the structure of research, regarding Deep Learning,
+						he wasn't able to assist me. Even so, I wanted to be a Machine Learning researcher and wanted to
+						be able to create and use Deep Learning models. At the time,
+						I thought I understood Neural Networks fairly well. I did happen to build a Neural Network from
+						scratch in Numpy (with the help of some tutorials...). Inhand, I felt fairly confident I could pull
+						this project off yet, I didn't know at the time what the project was going to be.
+						<br></br>
+						&emsp; From my limited exposure, I knew only a handful of topics and concepts. Overall, I knew
+						I wanted to be a Qunatitivae Analyst and I wanted to do a Deep Learning project. Put one and one
+						together, and after a quick couple of Googles, you realize why don't I do a Time Series forecasting
+						 project (as I mentioned, this was my first large scale Machine Learning project). I was convinced
+						 it was going to be a breeze and since I was using "Deep Learning" it was going to be amazingly
+						 accurate. Even though I had no clue what was novel about this project at the time, I brushed it
+						 off and decided an idea would come to me during the project.
+					</p>
+					<p></p>
+					<h5> 2. Tensors? What does tension have to with Deep Learning? </h5>
+					<p> &emsp; Turns out tensors and tension have nothing do with each other, this was shocking. However,
+						not as shocking as having the realization that the majority of Deep Learning post on the internet
+						have no clue about the mathematics of backpropagation of networks. After a couple of weeks of pondering
+						what to do for my project, I decided to build a Recurrent Network to perform Time Series forecasting.
+						Also, I decided I was going to build it only with Numpy. That means that I had to perform the deviations
+						for forward passing, backpropagation, and gradient updating by hand. After several weeks of no luck, I
+            decided to look up some tutorials on the mathematics of backpropagation. Quickly, I noticed theses tutorials
+						almost never showed any diviations but were just a discussion of the concept of backpropagation. Even so, I
+						trudged and eventually I could derive a Neural Network with all of its processes. I tested my deviations
+						by building a new Neural Network from scratch (no tutorials) and was able to get it to work. Now I decided
+						to go back and look at some deviations for Recurrent Networks. This time, less surprised, the deviations at
+						best only showed how to perform foward passes but never backpropagation for Recurrent networks. So it was back
+						to the drawing board.
+					</p>
+					<p> &emsp; After relentless testing, I found that the mathematics for backpropagation
+						just did not add up to how Reccruent networks perform forward passing. This led me to realize that yes,
+						standard backpropagation does not work on Reccruent network. Although this may seem obvious if you have
+						taken classes or had a book, neither which I had, this was absolutely shocking since no blog post or video
+            I watched ever mentioned this. Turns out, there is a variant of backpropagation called Backpropagation
+						Through Time, BPTT. Upon discovering this, my first thought was, since I was building a network from scratch,
+						how do I derive this? Again, I learned the hard lesson of wanting deviations from Compute Scientist is a
+						lost cause. After several weeks of reading about Tensor Operations and Tensor Calculus, I figured out the deviations.
+            I coded the network and got it working on forecasting time series stock data.
+					</p>
+					<p></p>
+					<h5> 3. Mankind was never intended to take the Jacobian of a Kronecker Product </h5>
+					<p> &emsp; Looking back, this might have been the most antagonizing deviation I have ever attempted.
+          Upon working through the deviations of a Recurrent Network and specifically BPTT, I was ready for my next challenge.
+					I was ready to take on a Recurrent Network with a state space, the LSTM. As I was doing all the coding through Numpy,
+					I had to perform the deviations myself. For the first time, I was introduced to the Kronecker Product.
+					Although this operation isn't that complicated to compute, it causes the dimensionality of the output to
+					increase by the multiplied values of the matrix's dimension size of the rows and columns. However,
+          the true issue was that by taking the jacobian of this output, the size grew once again. So how do you
+					perform backpropagation in respect to a weight that is nowhere near the dimension size of the output of the
+					Kronecker product which occurs as an operation in the LSTM? I had no idea and no post I could find did either.
+					I did eventually figure out the mathematics yet, only for a vector input. Even so, nowhere has anyone ever
+					posted the full deviations for when you input a training sample in the form of a batch in the shape of a matrix.
+					Although today I do know how to compute this through a method of broadcasting and averaging out the backpropagated errors,
+          at the time I just couldn't figure it out. This led me to the much more computationally friendly GRU.
+					</p>
+					<p></p>
+					<h5> 4. Trust in the Multivariable Chain Rule </h5>
+					<p> &emsp; I was ecstatic to discover the Gated Reccruent Unit, GRU. The mathematics
+          were fairly straight forward. I was smoothly able to derive the backpropogations and got
+					the network coded. I had the network working and was quite satisfied, till I wasn't. The mathematics
+					for how the state network and input network combined just made me feel off. How could combine two
+					networks, with completely different data entered, be combined and still make a logical network
+					that could properly model? This led me to research the much older file of state-space models.
+					This led me to understand how the state could serve as a map to interpret which event is occurring
+					and develop a "sudo memory." This question also led me to further understand Hilbert Spaces and how
+					backpropagation can truly lead to the construction of best approximations of Inner Product Spaces. This also led me to
+          the most unappreciated mathematical proofs that every person who works with Machine Learning to
+          know about, "The Universal Approximation Theorem." Finally, I was able to get a working network
+					and had a strong conceptual understanding of the theory behind Deep Learning yet, a question came back
+					to my mind, how is the project unique?
+					</p>
+					<p></p>
+					<h5> 5. I was convinced having orginal ideas were impossible </h5>
+					<p> &emsp; Being that this was my first official research project, I never had experienced the
+          the necessity to have an original idea on command. This task seemed so unnatural. There are no guide
+					books to have an original idea. I struggled for weeks to come up with a way to make my project unique
+					from any other Time Series Forecasting project. I had a clock running out of time and a lack of experience
+					to match. However, I did learn about how to come up with original ideas. I learned to stick with your
+					interpretation of things to have original ideas. I taught myself everything about Deep Learning on
+					my own. No feedback from anyone except the mathematics and the code of the models. No explanation
+					ever why anything worked, I only had definite proof from testing which left me to figure out the
+					"why's" of Deep Learning. I learned to question everything, be vicious to read about the topic
+					I wasn't familiar with, and to not settle for unexplained reasons for anything that I built
+					(Cough cough Tensorflow). Although I did not have this clarity during the time I was looking for
+					an original idea, my perspective was always with me which led me to an original idea.
+					</p>
+					<p> &emsp; As I was frantically reading paper after paper for inspiration, I came upon a paper
+          on adaptive activation functions. I ran upon a paper for a noisy activation function. It seemed logical
+					enough however, I noticed a discrepancy between their outlook on activation functions and mine. From working
+					through the deviations and proofs for convergence for Neural Networks, it has been shown the necessity
+					of activation functions to have nonlinear attributes to be able to properly approximate functions. Even so,
+					this paper proposed an activation function modification to sigmoid in which Gaussian noise was added for
+					outlying values. This caused any values not along the linear-shaped center of the function to have noise added.
+					This makes sense for the purpose of serving as a regressor
+
+						<a name="jump1"></a>
+
+						however, with my understanding of how it is necessary for activation functions to have nonlinear
+	          features, I decided I would make my own noisy activation function with nonlinear features.
+	          This led to my original activation function the Noisy Exponential Activation Function, NEAF.
+					</p>
+					<p></p>
+
+
+					<h5> 6. Noisy Exponential Activation Function, NEAF </h5>
+					<p> The Noisy Exponential Activation Function, NEAF, can be subsituted for any sigmoid or tanh function.
+						NEAF is built like a clipped sigmoid or tanh function. The values near the y-axis are passed through
+						a linear function while values outside a defined interval based around the y-axis are stepped to either
+						zero or one if sigmoid or negative one and one if tanh. For the stepped values, noise is added causing
+						the value to be pushed back down away from their respective bounds which will cause the neuron not to
+						saturate since overflow or underflow is avoided by the added noise. To help with convergence in the learning
+						process, the noise is passed through an expoential function causing the noise to maintin nonlinear attributes.
+						This can be seen by the visual below.
+					</p>
+
+					<figure>
+						<img src="RAU_images/NEAF_graph.png" class="image fit" alt="NEAF graph" />
+						<figcaption> Visual of NEAF </figcaption>
+					</figure>
+
+					<p></p>
+
+					<p> NEAF can be cleanly expressed through a composite function. The function fist
+						passes inputed values through the clipped sigmoid or tanh. Then the output of the
+						clipped function is passed through another function which adds the expoential noise.
+						The sigmoid version of NEAF is expressed through the formula below.
+
+					</p>
+
+					<figure>
+						<img src="RAU_images/NEAF_formula.png" class="image fit" alt="NEAF formula" />
+						<figcaption> Sigmoid NEAF Formula </figcaption>
+					</figure>
+
+					<p></p>
+
+					<p> For sake of simplicity in regard to implemenation to your favorite machine learning
+						libary, code for NEAF is provided in the example below with only numpy. The function
+						is broken into three sub-functions (linear, hard_sigmoid, and noise) for simplicity. The values
+						are first passed through the linear function, then the through a piecewise function
+						that causes clipping by passing values ouside of the designated interval through the
+						hard_sigmoid function, and finally the values that were just clipped by hard_sigmoid are
+						passed through the noise function.
+
+					</p>
+
+					<pre><code>
+	import numpy as np
+
+	def NEAF(x, deriv=False):
+	    def noise(x):
+	        return np.abs(np.random.randn(np.size(x)))
+
+	    def linear(x, deriv=False):
+	        if deriv:
+	            return 0.25
+	        return 0.25*x + 0.5
+
+	    def hard_sigmoid(x, deriv=False):
+	        if deriv:
+	            x = np.piecewise(x,[x >= 2, (-2<x) & (x<2) ,x <= -2],[lambda x: 0, lambda x: .25 ,lambda x: 0])
+	            return x
+	        return np.maximum(0, np.minimum(1, (x + 2) / 4))
+
+	    if deriv:
+	        x = linear(x)
+	        x = np.piecewise(x,[x > .975, (-.025<=x) & (x<=.975) ,x <= .025],
+	        [lambda x: -.01*noise(x)*(1-hard_sigmoid(x,deriv=True))*np.exp(x-hard_sigmoid(x)),
+	        lambda x: 1 ,
+	        lambda x: .01*noise(x)*(hard_sigmoid(x,deriv=True)-1)*np.exp(hard_sigmoid(x)-x)])
+	        x = x*.25
+	        return x
+
+	    x = linear(x)
+	    x = np.piecewise(x ,[x < 0.025, x > 0.025],[lambda x: 0.01 * np.exp(hard_sigmoid(x) - x) * noise(x), lambda x: x])
+	    x = np.piecewise(x ,[x > 0.975, x < 0.975],[lambda x: 1 - 0.01 * np.exp(x-hard_sigmoid(x)) * noise(x), lambda x: x])
+	    return x
+
+</code></pre>
+
+					<p></p>
+
+					<h5> Conclusion </h5>
+					<p> So does NEAF work? Yes, yes it does. You won't be finding NEAF at NIPS
+						any time soon but it definitly improves model performance. Through extended testing,
+						I was able to show that NEAF increases accuracy. Not suprrisngly, since NEAF acts
+						as a regressor, accuracy improved while mean square error dropped. To further about
+						NEAF, more information can be found in the short paper I wrote
+						<a href="https://github.com/RealestRick-C137/NEAF/blob/master/Noisy_Exponential_Activation_Function.pdf"> (LINK HERE)</a>.
+						If you want to take a look at the github page where NEAF is implimented into an RAU
+						for Financial Time-Series Forecasting
+						<a href="https://github.com/RealestRick-C137/NEAF"> (CLICK HERE)</a>.
+						Overall, I was very happy with this experiance which I was able to learn in depth more
+						about Deep Learning and was able to experiance the critical thinking and challanges
+						of a research project. 
+					</p>
+
+
+
+
+
+					<p>
+						<h5> Citations </h5>
+						[1] Zhong, Guoqiang, Guohua Yue, and Xiao Ling. "Recurrent Attention Unit." arXiv preprint arXiv:1810.12754 (2018).
+					</p>
+
+
+				</div>
+			</section>
+
+
+
+
+		</div>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="container">
+				<ul class="copyright">
+					<li>&copy; Untitled. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
